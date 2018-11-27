@@ -4669,6 +4669,13 @@ ng-zorro-antd@^1.8.0:
     date-fns "^1.29.0"
     tslib "^1.9.0"
 
+ngrx-normalizr@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/ngrx-normalizr/-/ngrx-normalizr-2.2.0.tgz#dff00f7994e59652ed0a341379d14ffa61483e6c"
+  integrity sha512-HK2f/TlS6VxFmUfK0XHX2wxtbyQIPjiyHdn+LUYxxgx66WURkWYAOOAy1YPHtx5gPzoIxXRgW42zq+05aaCgiA==
+  dependencies:
+    normalizr "^3.2.3"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -4811,7 +4818,7 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
-normalizr@^3.3.0:
+normalizr@^3.2.3, normalizr@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalizr/-/normalizr-3.3.0.tgz#6f44b95e8bf2201845a9e551920c4e5861166d27"
   integrity sha512-u8Us8Ms5KpY0mmNwML4OBxNKvlmSKeXfPBIXU9XmcejrZUjhIvUOd8RYBq62UL4JHxrcO4wqo2sL4s8B74Hadw==

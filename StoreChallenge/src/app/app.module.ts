@@ -15,7 +15,7 @@ import { reducers, metaReducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './store/effects/app.effects';
+import { MenuEffects } from './store/effects/app.effects';
 
 registerLocaleData(en);
 
@@ -34,7 +34,7 @@ registerLocaleData(en);
     NgZorroAntdModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([MenuEffects])
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

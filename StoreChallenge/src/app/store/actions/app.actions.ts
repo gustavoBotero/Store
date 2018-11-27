@@ -1,23 +1,26 @@
 import { Menu } from "./../../models/menu.model";
+import { Action } from "@ngrx/store";
+import { MenuState } from "../states/menu.state";
 
-export enum MenuActionTypes {
+export const FETCH_MENU_REQUEST = '[Menu] Load Menu request';
+export const FETCH_MENU_SUCCESS = '[Menu] Load Menu success';
+export const FETCH_MENU_FAILURE = '[Menu] Load Menu failure';
 
-    FetchMenuRequest = '[Menu] Load Menu request',
-    FetchMenuSuccess = '[Menu] Load Menu success',
-    FetchMenuFailure = '[Menu] Load Menu failure',
 
+export class FetchMenuRequest implements Action {
+    readonly type = FETCH_MENU_REQUEST;
 }
 
-export class FetchMenuRequest implements Request {
-    readonly type = MenuActionTypes.FetchMenuRequest;
+export class FetchMenuSuccess implements Action {
+    readonly type = FETCH_MENU_SUCCESS;
+    constructor(public payload: MenuState[]) { }
 }
 
-export class FetchMenuSuccess implements Success {
-    readonly type = MenuActionTypes.FetchMenuSuccess;
-    constructor(public payload: PaginatedResponse) { }
+export class FetchMenuFailure implements Action {
+    readonly type = FETCH_MENU_FAILURE;
 }
 
-export class FetchMenuFailure implements Failure {
-    readonly type = MenuActionTypes.FetchMenuFailure;
-    constructor(public payload: string) { }
-}
+export type All =
+  FetchMenuRequest |
+  FetchMenuSuccess |
+  FetchMenuFailure;
