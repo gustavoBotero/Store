@@ -29,7 +29,7 @@
     "ng-zorro-antd": "^1.8.0",
     "ngrx-normalizr": "^2.2.0",
     "normalizr": "^3.3.0",
-    "rxjs": "~6.2.0",
+    "rxjs": "^6.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

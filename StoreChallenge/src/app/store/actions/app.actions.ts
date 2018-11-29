@@ -1,6 +1,7 @@
 import { Menu } from "./../../models/menu.model";
 import { Action } from "@ngrx/store";
 import { MenuState } from "../states/menu.state";
+import { map, mergeMap } from 'rxjs/operators';
 
 export const FETCH_MENU_REQUEST = '[Menu] Load Menu request';
 export const FETCH_MENU_SUCCESS = '[Menu] Load Menu success';

@@ -1,6 +1,3 @@
-import { schema } from 'normalizr';
-import { Sublevel } from './sublevels.model';
-
 export class Menu {
     id: number;
     name: string;
@@ -16,9 +13,9 @@ export class Menu {
 
     static generateMockMenu(): Menu {
         return {
-            _id: 0,
+            id: 0,
             name: "",
-            sublevels: []
+            sublevels: [undefined]
         }
     }
 }

@@ -1,4 +1,7 @@
 <app-search-bar></app-search-bar>
+<div class="todos" *ngIf="todoListState$ | async as todoListState">
+
+</div>
 <ul nz-menu [nzMode]="'inline'" style="width: 240px;">
   <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')">
     <span title><i nz-icon type="mail"></i> Navigation One</span>

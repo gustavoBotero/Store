@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuListState, MenuState } from '../../store/states/menu.state';
+import * as MenuAction from '../../store/actions/app.actions';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+export interface AppState {
+
+  menu: MenuListState;
+
+}
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +17,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<MenuListState>) { }
+
+  menuListState$: Observable<MenuState[]>;
 
   ngOnInit() {
+    this.menuListState$ = this.store.select(state => state.menu);
+    
+    this.store.dispatch(new MenuAction.FetchMenuRequest());
   }
 
   openMap = {

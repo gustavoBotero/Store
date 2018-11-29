@@ -1,10 +1,7 @@
 import { MenuState } from '../states/menu.state';
 import { environment } from '../../../environments/environment';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/catch';
 
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
@@ -26,16 +23,16 @@ export class MenuEffects {
   ) { }
 
   @Effect()
-  GetTodos$: Observable<Action> = this.actions$.
+  FetchMenuRequest$: Observable<Action> = this.actions$.
     ofType<MenuActions.FetchMenuRequest>(MenuActions.FETCH_MENU_REQUEST)
-    .mergeMap(action =>
-      this.http.get('')
-        .map((data: Response) => {
+    .pipe(action =>
+      this.http.get('assets/categories.json'),
+        map((data: Response) => {
 
           console.log(data);
-          return new MenuActions.FetchMenuSuccess(data["data"]["docs"] as MenuState[]);
-        })
-        .catch(() => of(new MenuActions.FetchMenuFailure()))
+          return new MenuActions.FetchMenuSuccess(data["categories"] as MenuState[]);
+        }),
+        catchError(() => of(new MenuActions.FetchMenuFailure()))
     );
   
 }
